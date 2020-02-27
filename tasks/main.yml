@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible-role-barman
 
-- include: install.yml
+- include: install-{{ ansible_os_family }}.yml
   tags: [barman, barman-install]
 
 - include: configure.yml
