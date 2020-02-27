@@ -10,7 +10,7 @@ galaxy_info:
   - name: Debian
     versions:
     - all
-  - name: RHEL
+  - name: EL
     versions:
     - all
 
