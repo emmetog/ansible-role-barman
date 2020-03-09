@@ -18,7 +18,6 @@
   apt_repository:
     repo: "{{ barman_postgresql_apt_repository }}"
     state: present
-  when: barman_postgresql_apt_repository | default('') != ''
 
 - name: Add PostgreSQL repository preferences
   template:
