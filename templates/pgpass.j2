@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+
+{% for item in barman_server_configuration %}
+{% if item.streaming_password is defined %}
+{{ item.host }}:5432:*:{{ item.streaming_user }}:{{ item.streaming_password }}
+{% endif %}
+{% if item.management_password is defined %}
+{{ item.host }}:5432:*:{{ item.management_user|default('barman') }}:{{ item.management_password }}
+{% endif %}
+{% endfor %}

@@ -7,6 +7,13 @@ barman_apt_packages:
   - python-psycopg2
   - python-pycurl
 
+barman_yum_packages:
+  - rsync
+  - python
+  - python-psycopg2
+  - python-pycurl
+  - python-pip
+
 barman_pip_packages:
   - argcomplete
   - argh

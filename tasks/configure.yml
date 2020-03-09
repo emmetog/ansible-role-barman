@@ -16,5 +16,11 @@
   ignore_errors: yes
   become_user: "{{ barman_user }}"
   with_items: "{{ barman_server_configuration }}"
-  when: 
+  when:
     - item.backup_method == "postgres"
+
+- name: Create pgpass file
+  template:
+    src: pgpass.j2
+    dest: "{{ barman_home }}/.pgpass"
+    mode: 0600

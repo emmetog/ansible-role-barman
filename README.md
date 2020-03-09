@@ -65,6 +65,7 @@ barman_server_configuration:
 
     # Streaming WALS, can be streaming (replication) or traditional archiving
     streaming_user: "streaming_barman"
+    streaming_password: <password> # This is optional, remove this line if you want to manage the .pgpass file yourself
     streaming_archiver: "on"
     slot_name: barman_1
     archiver: off
