@@ -1,3 +1,5 @@
+#jinja2: trim_blocks:False
+
 [{{ item.name }}]
 active = "{{ item.active | default(true)}}"
 ; Human readable description

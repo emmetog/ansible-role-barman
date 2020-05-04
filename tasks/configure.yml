@@ -1,3 +1,13 @@
+- name: Create backup directory if defined
+  file:
+    path: "{{ item.backup_directory }}"
+    owner: "{{ barman_user }}"
+    mode: 0770
+    state: directory
+    recurse: yes
+  with_items: "{{ barman_server_configuration }}"
+  when: item.backup_directory is defined
+
 - name: Setup Barman Config
   template:
     src: barman.conf.j2
@@ -24,4 +34,5 @@
   template:
     src: pgpass.j2
     dest: "{{ barman_home }}/.pgpass"
+    owner: "{{ barman_user }}"
     mode: 0600
